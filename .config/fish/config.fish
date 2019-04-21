@@ -24,63 +24,64 @@ set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
 # ALT+- copy word from left of cursor to right of cursor
 bind \e- beginning-of-line forward-word kill-line yank yank
 if status --is-interactive
-    abbr -a -g au arch-update
-    abbr -a -g c cat
-    abbr -a -g dfh 'df -h'
-    abbr -a -g e echo
-    abbr -a -g gaa 'git add --all'
-    abbr -a -g ga 'git add'
-    abbr -a -g gap 'git add --patch'
-    abbr -a -g gba 'git --no-pager branch --all -vv'
-    abbr -a -g gb 'git --no-pager branch -vv'
-    abbr -a -g gca 'git commit -v -a'
-    abbr -a -g gca! 'git commit -v -a --amend'
-    abbr -a -g gcam 'git commit --all -m'
-    abbr -a -g gcb 'git checkout -b'
-    abbr -a -g gc 'git commit -v'
-    abbr -a -g gc! 'git commit -v --amend'
-    abbr -a -g gcl 'git clone'
-    abbr -a -g gcm 'git commit -m'
-    abbr -a -g gco 'git checkout'
-    abbr -a -g gcom 'git checkout master'
-    abbr -a -g gcot 'git checkout testing'
-    abbr -a -g gcp 'git cherry-pick'
-    abbr -a -g gdca 'git diff --cached'
-    abbr -a -g gd 'git diff'
-    abbr -a -g g git
-    abbr -a -g gl 'git log'
-    abbr -a -g glog 'git log --oneline --decorate --color --graph'
-    abbr -a -g glo 'git log --oneline --decorate --color'
-    abbr -a -g gloo 'git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
-    abbr -a -g gm 'git merge'
-    abbr -a -g gpl 'git pull'
-    abbr -a -g gpu 'git push'
-    abbr -a -g gr 'git remote -vv'
-    abbr -a -g grs 'git remote -vv show'
-    abbr -a -g grso 'git remote show origin'
-    abbr -a -g gsh 'git show'
-    abbr -a -g gshort 'git --no-pager shortlog'
-    abbr -a -g gss 'git status -s'
-    abbr -a -g gst 'git status'
-    abbr -a -g jc journalctl
-    abbr -a -g j jrnl
-    abbr -a -g la 'ls -vA'
-    abbr -a -g lg 'ls -lag'
-    abbr -a -g lh 'ls -lh'
-    abbr -a -g ll 'ls -al'
-    abbr -a -g l 'ls -l'
-    abbr -a -g l. 'ls -ld .*'
-    abbr -a -g md mkdir
-    abbr -a -g o less
-    abbr -a -g psg 'pgrep -a'
-    abbr -a -g pwrof 'systemctl poweroff -i'
-    abbr -a -g px 'ps aux'
-    abbr -a -g pxw 'ps auxwww'
-    abbr -a -g sc systemctl
-    abbr -a -g sv 'sudo -E nvim'
-    abbr -a -g vd 'nvim -d'
-    abbr -a -g v nvim
-    abbr -a -g xo xdg-open
-    abbr -a -g ydl youtube-dl
+    set -g fish_user_abbreviations
+    abbr -a au arch-update
+    abbr -a c cat
+    abbr -a dfh 'df -h'
+    abbr -a e echo
+    abbr -a gaa 'git add --all'
+    abbr -a ga 'git add'
+    abbr -a gap 'git add --patch'
+    abbr -a gba 'git --no-pager branch --all -vv'
+    abbr -a gb 'git --no-pager branch -vv'
+    abbr -a gca 'git commit -v -a'
+    abbr -a gca! 'git commit -v -a --amend'
+    abbr -a gcam 'git commit --all -m'
+    abbr -a gcb 'git checkout -b'
+    abbr -a gc 'git commit -v'
+    abbr -a gc! 'git commit -v --amend'
+    abbr -a gcl 'git clone'
+    abbr -a gcm 'git commit -m'
+    abbr -a gco 'git checkout'
+    abbr -a gcom 'git checkout master'
+    abbr -a gcot 'git checkout testing'
+    abbr -a gcp 'git cherry-pick'
+    abbr -a gdca 'git diff --cached'
+    abbr -a gd 'git diff'
+    abbr -a g git
+    abbr -a gl 'git log'
+    abbr -a glog 'git log --oneline --decorate --color --graph'
+    abbr -a glo 'git log --oneline --decorate --color'
+    abbr -a gloo 'git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
+    abbr -a gm 'git merge'
+    abbr -a gpl 'git pull'
+    abbr -a gpu 'git push'
+    abbr -a gr 'git remote -vv'
+    abbr -a grs 'git remote -vv show'
+    abbr -a grso 'git remote show origin'
+    abbr -a gsh 'git show'
+    abbr -a gshort 'git --no-pager shortlog'
+    abbr -a gss 'git status -s'
+    abbr -a gst 'git status'
+    abbr -a jc journalctl
+    abbr -a j jrnl
+    abbr -a la 'ls -vA'
+    abbr -a lg 'ls -lag'
+    abbr -a lh 'ls -lh'
+    abbr -a ll 'ls -al'
+    abbr -a l 'ls -l'
+    abbr -a l. 'ls -ld .*'
+    abbr -a md mkdir
+    abbr -a o less
+    abbr -a psg 'pgrep -a'
+    abbr -a pwrof 'systemctl poweroff -i'
+    abbr -a px 'ps aux'
+    abbr -a pxw 'ps auxwww'
+    abbr -a sc systemctl
+    abbr -a sv 'sudo -E nvim'
+    abbr -a vd 'nvim -d'
+    abbr -a v nvim
+    abbr -a xo xdg-open
+    abbr -a ydl youtube-dl
 end
 
