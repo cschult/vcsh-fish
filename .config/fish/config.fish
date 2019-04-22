@@ -73,6 +73,9 @@ if status --is-interactive
     abbr -a l. 'ls -ld .*'
     abbr -a md mkdir
     abbr -a o less
+    abbr -a pSs 'pacman --color=auto -Ss'
+    abbr -a pSyu 'sudo pacman --color=auto -Syu'
+    abbr -a pRns 'sudo pacman --color=auto -Rns'
     abbr -a psg 'pgrep -a'
     abbr -a pwrof 'systemctl poweroff -i'
     abbr -a px 'ps aux'
