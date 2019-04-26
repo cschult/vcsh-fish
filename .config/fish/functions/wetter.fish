@@ -1,14 +1,17 @@
 function wetter --description 'alias wetter curl http://wttr.in/Hamburg'
 
-    #set -l options (fish_opt --short=l --long=lang)
-    #argparse --name=wetter $options -- $argv
-    #or return
+    set _name (status current-command)
 
-    if test -z $argv
-        set argv 'Hamburg'
+    argparse --name=$_name 'p/place=' -- $argv
+    or return
+
+    if set -q _flag_p
+        set place $_flag_p
+    else
+        set place "Hamburg"
     end
 
     # curl "wttr.in/Paris?lang=fr
-    command curl http://de.wttr.in/$argv
+    command curl http://de.wttr.in/$place
 end
 
