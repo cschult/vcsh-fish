@@ -1,4 +1,4 @@
-# this is /usr/share/fish/functions/ls.fish (oh-my-fish) with only minimal changes
+# this is /usr/share/fish/functions/ls.fish with only minimal changes
 #
 # Make ls use colors if we are on a system that supports that feature and writing to stdout.
 #
