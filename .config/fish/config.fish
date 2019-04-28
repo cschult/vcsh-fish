@@ -49,7 +49,7 @@ if status --is-interactive
     abbr -a gdca 'git diff --cached'
     abbr -a gd 'git diff'
     abbr -a g git
-    abbr -a gl 'git log'
+    abbr -a gl 'git log --name-status'
     abbr -a glog 'git log --oneline --decorate --color --graph'
     abbr -a glo 'git log --oneline --decorate --color'
     abbr -a gloo 'git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
