@@ -83,8 +83,9 @@ if status --is-interactive
     abbr -a pxw 'ps auxwww'
     abbr -a sc systemctl
     abbr -a sv 'sudo -E nvim'
-    abbr -a vd 'nvim -d'
     abbr -a v nvim
+    abbr -a vcst 'vcsh status'
+    abbr -a vd 'nvim -d'
     abbr -a xo xdg-open
     abbr -a ydl youtube-dl
 end
