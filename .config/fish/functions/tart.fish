@@ -1,0 +1,41 @@
+function tart
+
+    set _my_name (status current-command)
+    function usage
+        echo "list content of various compreѕsed files"
+        echo "usage: $_my_name <compressedfile>"
+    end
+    if test -z $argv[1]
+        usage
+        return
+    end
+    if test $argv[1] = '-h'
+        usage
+        return
+    end
+    if test -f $argv[1]
+        switch $argv[1]
+            case '*.tar.bz2' '*.tbz'
+                tar tjf $argv[1]
+            case '*.tar.gz' '*.tgz'
+                tar tzf $argv[1]
+            case '*.tar.xz'
+                tar tJf $argv[1]
+            case '*.tar'
+                tar tf $argv[1]
+            case '*.zip'
+                unzip -l $argv[1]
+            case '*.rar'
+                unrar l $argv[1]
+            case '*.gz' '*.gzip'
+                gunzip -l $argv[1]
+            case '*.Z'
+                uncompress -l $argv[1]
+            case '*'
+                echo "unknown archiv format"
+        end
+    else
+        echo "not a valid file"
+    end
+end
+
