@@ -1,7 +1,6 @@
 function gn --description 'show name of current git repository'
 
-    # show name of current git repo. When in vcsh, the
-    # remotes name is used
+    # Show name of current git repo. Useful When in vcsh.
 
     git status > /dev/null 2>&1
     if test $status -eq 128
@@ -10,9 +9,10 @@ function gn --description 'show name of current git repository'
     end
 
     if test (git rev-parse --show-toplevel) = $HOME
-        basename (git remote get-url origin)
+        basename (git rev-parse --absolute-git-dir)
     else
         basename (git rev-parse --show-toplevel)
     end
 
 end
+
