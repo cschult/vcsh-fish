@@ -53,6 +53,7 @@ if status --is-interactive
     abbr -a glog 'git log --oneline --decorate --color --graph'
     abbr -a glo 'git log --oneline --decorate --color'
     abbr -a gloo 'git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s" --date=short'
+    abbr -a gls 'git ls-files'
     abbr -a gm 'git merge'
     abbr -a gpl 'git pull'
     abbr -a gpu 'git push'
