@@ -57,6 +57,7 @@ if status --is-interactive
     abbr -a gm 'git merge'
     abbr -a gpl 'git pull'
     abbr -a gpu 'git push'
+    abbr -a gpugh 'git push github'
     abbr -a gr 'git remote -vv'
     abbr -a grs 'git remote -vv show'
     abbr -a grso 'git remote show origin'
