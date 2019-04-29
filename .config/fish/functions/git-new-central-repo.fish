@@ -36,19 +36,12 @@ function git-new-central-repo
     if string match -q -r '\.GIT$' $repo
         set repo_git (string replace -r '\.GIT$' '.git' $repo)
         set repo (string replace -r '\.GIT$' '' $repo)
-        # set _list (string split -m 1 -r . $repo)
-        # set repo $_list[1]
-        # set suffix (string lower $_list[2])
-        # set repo $base
-        # set repo_git $repo.git
     # if repo name does not end with .git, add .git to it
     else if not string match -q -r '\.git$' $repo
         set repo_git $repo.git
     # if $repo has suffix .git
     else
         set repo_git $repo
-        #set _list (string split -m 1 -r . $repo_git)
-        #set repo $_list[1]
         set repo (string replace -r '\.git$' '' $repo)
     end
 
