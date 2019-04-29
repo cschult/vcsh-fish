@@ -1,6 +1,6 @@
 function tarx
 
-    set _my_name (status current-command)
+    set -l _my_name (status current-command)
 
     function usage
         echo "extract content of various compreѕsed files"
