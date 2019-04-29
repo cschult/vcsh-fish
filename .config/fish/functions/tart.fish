@@ -1,6 +1,6 @@
 function tart
 
-    set _my_name (status current-command)
+    set -l _my_name (status current-command)
 
     function usage
         echo "list content of various compreѕsed files"
@@ -13,7 +13,8 @@ function tart
     end
 
     if test -f $argv[1]
-        switch $argv[1]
+        set -l _file_lower (string lower $argv[1])
+        switch $_file_lower
             case '*.tar.bz2' '*.tbz';       tar tjf $argv[1]
             case '*.tar.gz' '*.tgz';        tar tzf $argv[1]
             case '*.tar.xz';                tar tJf $argv[1]
