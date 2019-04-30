@@ -21,6 +21,8 @@ set -x RECOLL_CONFDIR $HOME/.config/recoll
 set -x CARGO_HOME $HOME/.local/share/cargo
 set -x XINITRC $HOME/.config/X11/xinitrc
 set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
+# set z data file
+set -x _Z_DATA $HOME/.local/share/z
 # ALT+- copy word from left of cursor to right of cursor
 bind \e- beginning-of-line forward-word kill-line yank yank
 if status --is-interactive
