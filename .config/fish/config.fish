@@ -69,6 +69,7 @@ if status --is-interactive
     abbr -a gst 'git status'
     abbr -a jc journalctl
     abbr -a j jrnl
+    abbr -a ju jump
     abbr -a la 'ls -vA'
     abbr -a lg 'ls -lag'
     abbr -a lh 'ls -lh'
