@@ -1,1 +1,1 @@
-/home/schulle/.local/share/omf/themes/idan/fish_prompt.fish
+/home/schulle/.local/share/omf/themes/kawasaki/fish_prompt.fish
