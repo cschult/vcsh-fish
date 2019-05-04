@@ -1,5 +1,6 @@
 set fish_greeting
 set PATH $PATH $HOME/.local/bin
+set fish_prompt_pwd_dir_length 2
 set -x LC_MESSAGES en_US.UTF-8
 set -x EDITOR nvim
 set -x VISUAL nvim
