@@ -24,6 +24,11 @@ set -x XINITRC $HOME/.config/X11/xinitrc
 set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
 # set z data file
 set -x _Z_DATA $HOME/.local/share/z
+
+set -g __fish_git_prompt_show_informative_status
+set -g __fish_git_prompt_showcolorhints
+set -g __fish_git_prompt_showupstream "informative"
+
 # ALT+- copy word from left of cursor to right of cursor
 bind \e- beginning-of-line forward-word kill-line yank yank
 if status --is-interactive
