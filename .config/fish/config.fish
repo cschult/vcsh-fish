@@ -25,9 +25,12 @@ set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
 # set z data file
 set -x _Z_DATA $HOME/.local/share/z
 
-set -g __fish_git_prompt_show_informative_status
-set -g __fish_git_prompt_showcolorhints
-set -g __fish_git_prompt_showupstream "informative"
+# set -gx __fish_git_prompt_show_informative_status
+# set -gx __fish_git_prompt_showcolorhints
+# set -gx __fish_git_prompt_showupstream "informative"
+# set -gx __fish_git_prompt_char_upstream_ahead ' ☝️  '
+# set -gx __fish_git_prompt_char_upstream_behind ' 👇  '
+
 
 # ALT+- copy word from left of cursor to right of cursor
 bind \e- beginning-of-line forward-word kill-line yank yank
