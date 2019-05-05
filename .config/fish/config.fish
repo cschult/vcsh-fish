@@ -31,6 +31,14 @@ set -x _Z_DATA $HOME/.local/share/z
 # set -gx __fish_git_prompt_char_upstream_ahead ' ☝️  '
 # set -gx __fish_git_prompt_char_upstream_behind ' 👇  '
 
+### bobthefish
+set -g theme_display_git_ahead_verbose yes
+set -g theme_display_date no
+set -g default_user schulle
+# set -g theme_color_scheme dark
+set -g theme_color_scheme solarized
+# set -g theme_nerd_fonts yes
+### end bobthefish
 
 # ALT+- copy word from left of cursor to right of cursor
 bind \e- beginning-of-line forward-word kill-line yank yank
