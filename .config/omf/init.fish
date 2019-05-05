@@ -8,11 +8,10 @@
 # end: theme bobthefish
 # theme kawasaki
 #### Disable displaying the user's current group.
-set -g theme_display_group no
+# set -g theme_display_group no
 #### Hide the current directory read/write indicator.
-set -g theme_display_rw no
+# set -g theme_display_rw no
 #### Don't display the VirtualEnv prompt.
-set -g theme_display_virtualenv no
+# set -g theme_display_virtualenv no
 # end: theme kawasaki
-set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
