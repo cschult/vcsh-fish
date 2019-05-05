@@ -25,6 +25,8 @@ set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
 # set z data file
 set -x _Z_DATA $HOME/.local/share/z
 
+set -x VIRTUAL_ENV_DISABLE_PROMPT 1
+
 # set -gx __fish_git_prompt_show_informative_status
 # set -gx __fish_git_prompt_showcolorhints
 # set -gx __fish_git_prompt_showupstream "informative"
@@ -38,7 +40,9 @@ set -g default_user schulle
 # set -g theme_color_scheme dark
 set -g theme_color_scheme solarized
 # set -g theme_nerd_fonts yes
+# set -g theme_display_virtualenv yes
 ### end bobthefish
+
 
 # ALT+- copy word from left of cursor to right of cursor
 bind \e- beginning-of-line forward-word kill-line yank yank
