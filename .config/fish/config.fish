@@ -34,13 +34,15 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 # set -gx __fish_git_prompt_char_upstream_behind ' 👇  '
 
 ### bobthefish
+set -g theme_display_git yes
+set -g theme_display_git_untracked yes
 set -g theme_display_git_ahead_verbose yes
 set -g theme_display_date no
 set -g default_user schulle
-# set -g theme_color_scheme dark
 set -g theme_color_scheme solarized
-# set -g theme_nerd_fonts yes
-# set -g theme_display_virtualenv yes
+set -g theme_display_virtualenv yes
+set -g theme_show_exit_status yes
+set -g theme_display_cmd_duration no
 ### end bobthefish
 
 
