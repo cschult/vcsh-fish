@@ -13,7 +13,6 @@ set -x TMUX_TMPDIR $XDG_RUNTIME_DIR
 set -x LYNX_CFG $HOME/.config/lynx/config
 set -x TIGRC_USER $HOME/.config/tig/tigrc
 set -x ELINKS_CONFDIR $HOME/.config/elinks
-set -x VISUAL nvim
 set -x GTK2_RC_FILES $HOME/.config/gtk-2.0/gtkrc
 set -x GTK_RC_FILES $HOME/.config/gtk-1.0/gtkrc
 set -x GIMP2_DIRECTORY $HOME/.config/gimp
