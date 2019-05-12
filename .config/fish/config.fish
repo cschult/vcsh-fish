@@ -1,6 +1,12 @@
+
+# fish vars
+# =========
 set fish_greeting
+set fish_prompt_pwd_dir_length 3
 set PATH $PATH $HOME/.local/bin
-set fish_prompt_pwd_dir_length 2
+
+# program vars
+# ============
 set -x LC_MESSAGES en_US.UTF-8
 set -x EDITOR nvim
 set -x VISUAL nvim
@@ -23,15 +29,10 @@ set -x XINITRC $HOME/.config/X11/xinitrc
 set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
 # set z data file
 set -x _Z_DATA $HOME/.local/share/z
-
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
-# set -gx __fish_git_prompt_show_informative_status
-# set -gx __fish_git_prompt_showcolorhints
-# set -gx __fish_git_prompt_showupstream "informative"
-# set -gx __fish_git_prompt_char_upstream_ahead ' ☝️  '
-# set -gx __fish_git_prompt_char_upstream_behind ' 👇  '
-
+# oh-my-fish theme vars
+# =====================
 ### bobthefish
 set -g theme_display_git yes
 set -g theme_display_git_untracked yes
@@ -44,7 +45,8 @@ set -g theme_show_exit_status yes
 set -g theme_display_cmd_duration no
 ### end bobthefish
 
-
+# abbreviations
+# =============
 # ALT+- copy word from left of cursor to right of cursor
 bind \e- beginning-of-line forward-word kill-line yank yank
 if status --is-interactive
