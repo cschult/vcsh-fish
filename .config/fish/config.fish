@@ -1,4 +1,10 @@
-
+# config.fish
+#
+# git: fish.git (vcsh)
+#
+# (C) Christian Schult <cschult@devmem.de>
+#
+#
 # fish vars
 # =========
 set fish_greeting
