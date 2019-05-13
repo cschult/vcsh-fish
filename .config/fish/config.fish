@@ -3,7 +3,7 @@
 # =========
 set fish_greeting
 set fish_prompt_pwd_dir_length 3
-set PATH $PATH $HOME/.local/bin
+[ -d $HOME/.local/bin ] && set PATH $PATH $HOME/.local/bin
 
 # program vars
 # ============
