@@ -10,6 +10,7 @@
 set fish_greeting
 set fish_prompt_pwd_dir_length 3
 [ -d $HOME/.local/bin ] && set PATH $PATH $HOME/.local/bin
+set -x RECOLL_CONFDIR $HOME/.config/recoll
 
 # program vars
 # ============
@@ -35,20 +36,20 @@ set -x XINITRC $HOME/.config/X11/xinitrc
 set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
 # set z data file
 set -x _Z_DATA $HOME/.local/share/z
-set -x VIRTUAL_ENV_DISABLE_PROMPT 1
+# set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # oh-my-fish theme vars
 # =====================
 ### bobthefish
-set -g theme_display_git yes
-set -g theme_display_git_untracked yes
-set -g theme_display_git_ahead_verbose yes
-set -g theme_display_date no
-set -g default_user schulle
-set -g theme_color_scheme solarized
-set -g theme_display_virtualenv yes
-set -g theme_show_exit_status yes
-set -g theme_display_cmd_duration no
+# set -g theme_display_git yes
+# set -g theme_display_git_untracked yes
+# set -g theme_display_git_ahead_verbose yes
+# set -g theme_display_date no
+# set -g default_user schulle
+# set -g theme_color_scheme solarized
+# set -g theme_display_virtualenv yes
+# set -g theme_show_exit_status yes
+# set -g theme_display_cmd_duration no
 ### end bobthefish
 
 # abbreviations
