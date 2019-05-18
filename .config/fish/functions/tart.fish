@@ -23,7 +23,7 @@ function tart
             case '*.rar';                   unrar l $argv[1]
             case '*.gz' '*.gzip';         gunzip -l $argv[1]
             case '*.Z';               uncompress -l $argv[1]
-            case '*' echo "unknown archiv format"
+            case '*'; echo "unknown archiv format"
         end
     else
         echo "not a valid file"
