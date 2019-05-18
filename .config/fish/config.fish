@@ -5,11 +5,17 @@
 # (C) Christian Schult <cschult@devmem.de>
 #
 #
+# setup
+# =====
+[ -f /etc/os-release ]
+  and set -l _os_release (awk -F'=' 'FNR==3{print $NF}' /etc/os-release)
+
 # fish vars
 # =========
 set fish_greeting
 set fish_prompt_pwd_dir_length 3
-[ -d $HOME/.local/bin ] && set PATH $PATH $HOME/.local/bin
+[ -d $HOME/.local/bin ]
+  and set PATH $PATH $HOME/.local/bin
 set -x RECOLL_CONFDIR $HOME/.config/recoll
 
 # program vars
@@ -34,23 +40,9 @@ set -x RECOLL_CONFDIR $HOME/.config/recoll
 set -x CARGO_HOME $HOME/.local/share/cargo
 set -x XINITRC $HOME/.config/X11/xinitrc
 set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
-# set z data file
-set -x _Z_DATA $HOME/.local/share/z
-# set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # oh-my-fish theme vars
 # =====================
-### bobthefish
-# set -g theme_display_git yes
-# set -g theme_display_git_untracked yes
-# set -g theme_display_git_ahead_verbose yes
-# set -g theme_display_date no
-# set -g default_user schulle
-# set -g theme_color_scheme solarized
-# set -g theme_display_virtualenv yes
-# set -g theme_show_exit_status yes
-# set -g theme_display_cmd_duration no
-### end bobthefish
 
 # abbreviations
 # =============
@@ -58,7 +50,6 @@ set -x _Z_DATA $HOME/.local/share/z
 bind \e- beginning-of-line forward-word kill-line yank yank
 if status --is-interactive
     set -g fish_user_abbreviations
-    abbr -a au arch-update
     abbr -a c cat
     abbr -a dfh 'df -h'
     abbr -a e echo
@@ -109,9 +100,6 @@ if status --is-interactive
     abbr -a l. 'ls -ld .*'
     abbr -a md mkdir
     abbr -a o less
-    abbr -a pSs 'pacman --color=auto -Ss'
-    abbr -a pSyu 'sudo pacman --color=auto -Syu'
-    abbr -a pRns 'sudo pacman --color=auto -Rns'
     abbr -a psg 'pgrep -a'
     abbr -a pwrof 'systemctl poweroff -i'
     abbr -a px 'ps aux'
@@ -123,5 +111,17 @@ if status --is-interactive
     abbr -a vd 'nvim -d'
     abbr -a xo xdg-open
     abbr -a ydl youtube-dl
+    if set -q _os_release
+        switch $_os_release
+          case "ubuntu"
+            abbr -a apti 'apt install'
+            abbr -a auf 'sudo apt update && sudo apt full-upgrade'
+          case "arch"
+            abbr -a au 'arch-update'
+            abbr -a pSs 'pacman --color=auto -Ss'
+            abbr -a pSyu 'sudo pacman --color=auto -Syu'
+            abbr -a pRns 'sudo pacman --color=auto -Rns'
+        end
+    end
 end
 
