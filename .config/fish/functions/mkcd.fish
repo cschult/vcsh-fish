@@ -1,20 +1,18 @@
-function mkcd -d "Create a directory and set CWD"
+function mkcd -d "Create a directory and cd into"
+
+    # (C) Christian Schult 2019 <cschult@devmem.de>
+    #
+    # give all options and params to mkdir.
+    # When mkdir returns 0, test if last option
+    # is a dir, then cd into.
+    # When multiple dirs have been created, the last
+    # created dir will be entered.
+
     command mkdir $argv
-    set -l _last_status $status
-    if test $_last_status = 0
-        set -l _last_arg $argv[(count $argv)]
-        switch $_last_arg
-            case '-*'
-                if test -d $_last_arg
-                    cd ./$_last_arg
-                    return $status
-                end
-            case '*'
-                cd $_last_arg
-                return $status
+    if test $status = 0
+        and if test -d $argv[(count $argv)]
+            cd $argv[(count $argv)]
         end
-    else
-        return $_last_status
     end
 end
 
