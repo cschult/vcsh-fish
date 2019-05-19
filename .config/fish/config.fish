@@ -8,7 +8,7 @@
 # setup
 # =====
 [ -f /etc/os-release ]
-  and set -l _os_release (awk -F'=' 'FNR==3{print $NF}' /etc/os-release)
+  and set -l _os_release (awk -F'=' '/^ID=/ {print $NF}' /etc/os-release)
 
 # fish vars
 # =========
