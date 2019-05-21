@@ -22,7 +22,6 @@ set fish_greeting
 set fish_prompt_pwd_dir_length 3
 [ -d $HOME/.local/bin ]
   and set PATH $PATH $HOME/.local/bin
-set -x RECOLL_CONFDIR $HOME/.config/recoll
 
 # program vars
 # ============
