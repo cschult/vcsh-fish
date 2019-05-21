@@ -7,8 +7,14 @@
 #
 # setup
 # =====
-[ -f /etc/os-release ]
-  and set -l _os_release (awk -F'=' '/^ID=/ {print $NF}' /etc/os-release)
+
+# [ -f /etc/os-release ]
+#   and set -l _os_release (awk -F'=' '/^ID=/ {print $NF}' /etc/os-release)
+
+if [ -f /etc/os-release ]
+    set -l __xyz (while read -la line; string match -e -r '^ID=' $line; end < /etc/os-release)
+    set _distribution (string replace -r '^ID=' '' $__xyz)
+end
 
 # fish vars
 # =========
@@ -111,9 +117,9 @@ if status --is-interactive
     abbr -a vd 'nvim -d'
     abbr -a xo xdg-open
     abbr -a ydl youtube-dl
-    if set -q _os_release
-        switch $_os_release
-          case "ubuntu"
+    if set -q _distribution
+        switch $_distribution
+          case "ubuntu" "debian"
             abbr -a apti 'apt install'
             abbr -a auf 'sudo apt update && sudo apt full-upgrade'
           case "arch"
