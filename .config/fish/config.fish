@@ -29,7 +29,8 @@ set -x LC_MESSAGES en_US.UTF-8
 set -x EDITOR nvim
 set -x VISUAL nvim
 set -x PAGER less
-set -x LESS -R -M -i
+set -x LESS -R -M -i -F -X
+set -x LESSOPEN '|/usr/bin/lesspipe.sh %s'
 set -x CDR_DEVICE /dev/cdrom
 set -x GPGKEY E3FEEFF0
 set -x PRINTER GraustufenNormalDuplex
@@ -58,6 +59,7 @@ if status --is-interactive
     abbr -a c cat
     abbr -a dfh 'df -h'
     abbr -a e echo
+    abbr -a f functions
     abbr -a gaa 'git add --all'
     abbr -a ga 'git add'
     abbr -a gap 'git add --patch'
