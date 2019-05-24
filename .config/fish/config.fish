@@ -126,6 +126,7 @@ if status --is-interactive
             abbr -a pSs 'pacman --color=auto -Ss'
             abbr -a pSyu 'sudo pacman --color=auto -Syu'
             abbr -a pRns 'sudo pacman --color=auto -Rns'
+            abbr -a pQs 'pacman -Qs'
         end
     end
 end
