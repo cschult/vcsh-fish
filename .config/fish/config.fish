@@ -120,15 +120,23 @@ if status --is-interactive
     abbr -a ydl youtube-dl
     if set -q _distribution
         switch $_distribution
-          case "ubuntu" "debian"
-            abbr -a apti 'apt install'
-            abbr -a auf 'sudo apt update && sudo apt full-upgrade'
-          case "arch"
-            abbr -a au 'arch-update'
-            abbr -a pSs 'pacman --color=auto -Ss'
-            abbr -a pSyu 'sudo pacman --color=auto -Syu'
-            abbr -a pRns 'sudo pacman --color=auto -Rns'
-            abbr -a pQs 'pacman -Qs'
+            case "ubuntu"
+                if [ $USER = 'root' ]
+                    abbr -a apti 'apt install'
+                    abbr -a auf 'apt update && sudo apt full-upgrade'
+                else
+                    abbr -a apti 'sudo apt install'
+                    abbr -a auf 'sudo apt update && sudo apt full-upgrade'
+                end
+            case "arch"
+                abbr -a au 'arch-update'
+                abbr -a pSs 'pacman --color=auto -Ss'
+                abbr -a pSyu 'sudo pacman --color=auto -Syu'
+                abbr -a pRns 'sudo pacman --color=auto -Rns'
+                abbr -a pQs 'pacman -Qs'
+            case "debian"
+                abbr -a apti 'sudo apt install'
+                abbr -a auf 'sudo apt update && sudo apt full-upgrade'
         end
     end
 end
