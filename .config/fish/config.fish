@@ -5,61 +5,82 @@
 # (C) Christian Schult <cschult@devmem.de>
 #
 #
-# setup
-# =====
 
-# [ -f /etc/os-release ]
-#   and set -l _os_release (awk -F'=' '/^ID=/ {print $NF}' /etc/os-release)
+# fish vars
+# =========
+set fish_greeting
+set fish_prompt_pwd_dir_length 3
+
+# path
+# ====
+[ -d $HOME/.local/bin ] && set PATH $PATH $HOME/.local/bin
+
+set -x LC_MESSAGES en_US.UTF-8
+set -x EDITOR nvim
+set -x VISUAL nvim
+set -x PAGER less
+set -x LESS -R -M -i -F -X
+
+# abbreviations
+# =============
+if status --is-interactive
+
+end
+
+# key bindings
+# ============
+# ALT+- copy word from left of cursor to right of cursor
+bind \e- beginning-of-line forward-word kill-line yank yank
 
 if [ -f /etc/os-release ]
     set -l __xyz (while read -la line; string match -e -r '^ID=' $line; end < /etc/os-release)
     set _distribution (string replace -r '^ID=' '' $__xyz)
 end
 
-# fish vars
-# =========
-set fish_greeting
-set fish_prompt_pwd_dir_length 3
-[ -d $HOME/.local/bin ]
-  and set PATH $PATH $HOME/.local/bin
-
 # program vars
 # ============
-set -x LC_MESSAGES en_US.UTF-8
-set -x EDITOR nvim
-set -x VISUAL nvim
-set -x PAGER less
-set -x LESS -R -M -i -F -X
 set -x LESSOPEN '|/usr/bin/lesspipe.sh %s'
-set -x CDR_DEVICE /dev/cdrom
-set -x GPGKEY E3FEEFF0
-set -x PRINTER GraustufenNormalDuplex
 set -x TMUX_TMPDIR $XDG_RUNTIME_DIR
 set -x LYNX_CFG $HOME/.config/lynx/config
 set -x TIGRC_USER $HOME/.config/tig/tigrc
 set -x ELINKS_CONFDIR $HOME/.config/elinks
-set -x GTK2_RC_FILES $HOME/.config/gtk-2.0/gtkrc
-set -x GTK_RC_FILES $HOME/.config/gtk-1.0/gtkrc
-set -x GIMP2_DIRECTORY $HOME/.config/gimp
-set -x MPLAYER_HOME $HOME/.config/mplayer
-set -x RECOLL_CONFDIR $HOME/.config/recoll
-set -x CARGO_HOME $HOME/.local/share/cargo
-set -x XINITRC $HOME/.config/X11/xinitrc
-set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
+if [ $hostname = 'jazz' ]
+    set -x CDR_DEVICE /dev/cdrom
+    set -x GPGKEY E3FEEFF0
+    set -x PRINTER GraustufenNormalDuplex
+    set -x GTK2_RC_FILES $HOME/.config/gtk-2.0/gtkrc
+    set -x GTK_RC_FILES $HOME/.config/gtk-1.0/gtkrc
+    set -x GIMP2_DIRECTORY $HOME/.config/gimp
+    set -x MPLAYER_HOME $HOME/.config/mplayer
+    set -x RECOLL_CONFDIR $HOME/.config/recoll
+    set -x CARGO_HOME $HOME/.local/share/cargo
+    set -x XINITRC $HOME/.config/X11/xinitrc
+    # set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
+end
 
-# oh-my-fish theme vars
-# =====================
-
-# abbreviations
-# =============
-# ALT+- copy word from left of cursor to right of cursor
-bind \e- beginning-of-line forward-word kill-line yank yank
+# user abbreviations
+# ==================
 if status --is-interactive
     set -g fish_user_abbreviations
     abbr -a c cat
     abbr -a dfh 'df -h'
     abbr -a e echo
     abbr -a f functions
+    abbr -a jc journalctl
+    abbr -a la 'ls -vA'
+    abbr -a lg 'ls -lag'
+    abbr -a lh 'ls -lh'
+    abbr -a ll 'ls -al'
+    abbr -a l 'ls -l'
+    abbr -a l. 'ls -ld .*'
+    abbr -a md mkdir
+    abbr -a o less
+    abbr -a psg 'pgrep -a'
+    abbr -a px 'ps aux'
+    abbr -a pxw 'ps auxwww'
+    abbr -a sc systemctl
+    abbr -a v nvim
+    abbr -a vd 'nvim -d'
     abbr -a gaa 'git add --all'
     abbr -a ga 'git add'
     abbr -a gap 'git add --patch'
@@ -96,48 +117,34 @@ if status --is-interactive
     abbr -a gshort 'git --no-pager shortlog'
     abbr -a gss 'git status -s'
     abbr -a gst 'git status'
-    abbr -a jc journalctl
-    abbr -a j jrnl
-    abbr -a ju jump
-    abbr -a la 'ls -vA'
-    abbr -a lg 'ls -lag'
-    abbr -a lh 'ls -lh'
-    abbr -a ll 'ls -al'
-    abbr -a l 'ls -l'
-    abbr -a l. 'ls -ld .*'
-    abbr -a md mkdir
-    abbr -a o less
-    abbr -a psg 'pgrep -a'
-    abbr -a pwrof 'systemctl poweroff -i'
-    abbr -a px 'ps aux'
-    abbr -a pxw 'ps auxwww'
-    abbr -a sc systemctl
     abbr -a sv 'sudo -E nvim'
-    abbr -a v nvim
-    abbr -a vcst 'vcsh status'
-    abbr -a vd 'nvim -d'
-    abbr -a xo xdg-open
-    abbr -a ydl youtube-dl
+
+    # abbreviations for distributions
+    # ===============================
     if set -q _distribution
         switch $_distribution
             case "ubuntu"
-                if [ $USER = 'root' ]
-                    abbr -a apti 'apt install'
-                    abbr -a auf 'apt update && sudo apt full-upgrade'
-                else
-                    abbr -a apti 'sudo apt install'
-                    abbr -a auf 'sudo apt update && sudo apt full-upgrade'
-                end
+                abbr -a pwrof 'systemctl poweroff -i'
+                abbr -a j jrnl
+                abbr -a apti 'sudo apt install'
+                abbr -a auf 'sudo apt update && sudo apt full-upgrade'
+                abbr -a ydl youtube-dl
+                abbr -a xo xdg-open
+                abbr -a vcst 'vcsh status'
             case "arch"
+                abbr -a pwrof 'systemctl poweroff -i'
                 abbr -a au 'arch-update'
                 abbr -a pSs 'pacman --color=auto -Ss'
                 abbr -a pSyu 'sudo pacman --color=auto -Syu'
                 abbr -a pRns 'sudo pacman --color=auto -Rns'
                 abbr -a pQs 'pacman -Qs'
+                abbr -a vcst 'vcsh status'
+                abbr -a xo xdg-open
+                abbr -a ydl youtube-dl
             case "debian"
                 abbr -a apti 'sudo apt install'
                 abbr -a auf 'sudo apt update && sudo apt full-upgrade'
-        end
-    end
-end
+        end # switch
+    end # if set -q _distribution
+end # status --is-interactive
 
