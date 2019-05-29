@@ -124,10 +124,17 @@ if status --is-interactive
     if set -q _distribution
         switch $_distribution
             case "ubuntu"
+                abbr -a acs 'apt-cache search'
+                abbr -a acsh 'apt-cache show'
+                abbr -a acp 'apt-cache policy'
+                abbr -a aptu 'sudo apt update'
+                abbr -a apti 'sudo apt install'
+                abbr -a aptp 'sudo apt purge'
+                abbr -a auf 'sudo apt update && sudo apt full-upgrade'
+                abbr -a aptrm 'sudo apt remove'
+                abbr -a aptau 'sudo apt autoremove'
                 abbr -a pwrof 'systemctl poweroff -i'
                 abbr -a j jrnl
-                abbr -a apti 'sudo apt install'
-                abbr -a auf 'sudo apt update && sudo apt full-upgrade'
                 abbr -a ydl youtube-dl
                 abbr -a xo xdg-open
                 abbr -a vcst 'vcsh status'
@@ -142,8 +149,16 @@ if status --is-interactive
                 abbr -a xo xdg-open
                 abbr -a ydl youtube-dl
             case "debian"
+                abbr -a acs 'apt-cache search'
+                abbr -a acsh 'apt-cache show'
+                abbr -a acp 'apt-cache policy'
+                abbr -a aptu 'sudo apt update'
                 abbr -a apti 'sudo apt install'
+                abbr -a aptp 'sudo apt purge'
                 abbr -a auf 'sudo apt update && sudo apt full-upgrade'
+                abbr -a aptrm 'sudo apt remove'
+                abbr -a aptau 'sudo apt autoremove'
+                abbr -a vcst 'vcsh status'
         end # switch
     end # if set -q _distribution
 end # status --is-interactive
