@@ -141,9 +141,10 @@ if status --is-interactive
             case "arch"
                 abbr -a pwrof 'systemctl poweroff -i'
                 abbr -a au 'arch-update'
-                abbr -a pSs 'pacman --color=auto -Ss'
-                abbr -a pSyu 'sudo pacman --color=auto -Syu'
-                abbr -a pRns 'sudo pacman --color=auto -Rns'
+                abbr -a pS 'sudo pacman -S'
+                abbr -a pSs 'pacman -Ss'
+                abbr -a pSyu 'sudo pacman -Syu'
+                abbr -a pRns 'sudo pacman -Rns'
                 abbr -a pQs 'pacman -Qs'
                 abbr -a vcst 'vcsh status'
                 abbr -a xo xdg-open
