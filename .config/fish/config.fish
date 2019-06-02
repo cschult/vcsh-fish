@@ -40,7 +40,7 @@ end
 
 # program vars
 # ============
-set -x LESSOPEN '|/usr/bin/lesspipe.sh %s'
+
 set -x TMUX_TMPDIR $XDG_RUNTIME_DIR
 set -x LYNX_CFG $HOME/.config/lynx/config
 set -x TIGRC_USER $HOME/.config/tig/tigrc
@@ -58,6 +58,17 @@ if [ $hostname = 'jazz' ]
     set -x XINITRC $HOME/.config/X11/xinitrc
     # set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
 end
+if set -q _distribution
+    switch $_distribution
+        case "arch"
+            set -x LESSOPEN '|/usr/bin/lesspipe.sh %s'
+        case "ubuntu"
+            set -x LESSOPEN '|/usr/bin/lesspipe %s'
+        case "debian"
+            set -x LESSOPEN '|/usr/bin/lesspipe %s'
+    end
+end
+
 
 # user abbreviations
 # ==================
