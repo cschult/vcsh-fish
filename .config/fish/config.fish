@@ -161,6 +161,8 @@ if status --is-interactive
                 abbr -a vcst 'vcsh status'
                 abbr -a xo xdg-open
                 abbr -a ydl youtube-dl
+                abbr -a jpop 'remote-login-tmux jpop'
+                abbr -a blues 'remote-login-tmux blues'
             case "debian"
                 abbr -a acs 'apt-cache search'
                 abbr -a acsh 'apt-cache show'
