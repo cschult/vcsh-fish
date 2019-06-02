@@ -14,6 +14,7 @@ set fish_prompt_pwd_dir_length 3
 # path
 # ====
 [ -d $HOME/.local/bin ] && set PATH $PATH $HOME/.local/bin
+[ -d $HOME/.node_modules_global ] && set PATH $HOME/.node_modules_global/bin $PATH
 
 set -x LC_MESSAGES en_US.UTF-8
 set -x EDITOR nvim
