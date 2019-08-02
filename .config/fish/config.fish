@@ -19,6 +19,7 @@ set fish_prompt_pwd_dir_length 3
 set -x LC_MESSAGES en_US.UTF-8
 set -x EDITOR nvim
 set -x VISUAL nvim
+set -x DIFFPROG nvim -d
 set -x PAGER less
 set -x LESS -R -M -i -F -X
 
