@@ -21,6 +21,7 @@ set -x EDITOR nvim
 set -x VISUAL nvim
 set -x PAGER less
 set -x LESS -R -M -i -F -X
+set -x NNN_USE_EDITOR 1
 
 # abbreviations
 # =============
