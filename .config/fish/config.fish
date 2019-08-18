@@ -59,7 +59,10 @@ if [ $hostname = 'jazz' ]
     set -x CARGO_HOME $HOME/.local/share/cargo
     set -x XINITRC $HOME/.config/X11/xinitrc
     # set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
+else if [ $hostname = 'jpop' ]
+    set -x RECOLL_CONFDIR $HOME/.config/recoll
 end
+
 if set -q _distribution
     switch $_distribution
         case "arch"
