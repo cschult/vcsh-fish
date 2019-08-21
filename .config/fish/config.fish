@@ -152,6 +152,7 @@ if status --is-interactive
                 abbr -a aptp 'sudo apt purge'
                 abbr -a auf 'sudo apt update && sudo apt full-upgrade'
                 abbr -a ubuntu-update 'sudo apt update && sudo apt full-upgrade && sudo apt autoremove'
+                abbr -a uu 'sudo apt update && sudo apt full-upgrade && sudo apt autoremove'
                 abbr -a aptrm 'sudo apt remove'
                 abbr -a aptau 'sudo apt autoremove'
                 abbr -a pwrof 'systemctl poweroff -i'
