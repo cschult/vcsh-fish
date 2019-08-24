@@ -165,6 +165,7 @@ if status --is-interactive
                 abbr -a ydl youtube-dl
                 abbr -a xo xdg-open
                 abbr -a vcst 'vcsh status'
+                abbr -a t 'todo-txt -d ~/.config/todo/config'
             case "arch"
                 abbr -a pwrof 'systemctl poweroff -i'
                 abbr -a au 'arch-update'
@@ -178,6 +179,7 @@ if status --is-interactive
                 abbr -a ydl youtube-dl
                 abbr -a jpop 'remote-login-tmux jpop'
                 abbr -a blues 'remote-login-tmux blues'
+                abbr -a t 'todo.sh -d ~/.config/todo/config'
             case "debian"
                 abbr -a acs 'apt-cache search'
                 abbr -a acsh 'apt-cache show'
