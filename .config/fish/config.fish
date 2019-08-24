@@ -6,6 +6,12 @@
 #
 #
 
+# determine which linux we are on
+if [ -f /etc/os-release ]
+    set -l __xyz (while read -la line; string match -e -r '^ID=' $line; end < /etc/os-release)
+    set _distribution (string replace -r '^ID=' '' $__xyz)
+end
+
 # fish vars
 # =========
 set fish_greeting
@@ -37,10 +43,8 @@ end
 # ============
 # ALT+- copy word from left of cursor to right of cursor
 bind \e- beginning-of-line forward-word kill-line yank yank
-
-if [ -f /etc/os-release ]
-    set -l __xyz (while read -la line; string match -e -r '^ID=' $line; end < /etc/os-release)
-    set _distribution (string replace -r '^ID=' '' $__xyz)
+if [ $_distribution = 'ubuntu' ]
+    bind \e\[P delete-char
 end
 
 # program vars
