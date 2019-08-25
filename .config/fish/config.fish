@@ -44,9 +44,12 @@ end
 # ALT+- copy word from left of cursor to right of cursor
 bind \e- beginning-of-line forward-word kill-line yank yank
 # need to set this for stterm (st), the terminal regolith linux uses
-if [ $_distribution = 'ubuntu' ]
+#if [ $_distribution = 'ubuntu' ]
+if string match -q "st-*" "$TERM"
     bind \e\[P delete-char
 end
+
+
 
 # program vars
 # ============
