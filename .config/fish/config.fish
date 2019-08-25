@@ -58,6 +58,11 @@ set -x TMUX_TMPDIR $XDG_RUNTIME_DIR
 set -x LYNX_CFG $HOME/.config/lynx/config
 set -x TIGRC_USER $HOME/.config/tig/tigrc
 set -x ELINKS_CONFDIR $HOME/.config/elinks
+# avoid error message: 'erresc: unknown str ESC]7'
+# https://github.com/fish-shell/fish-shell/issues/3425
+if string match -q "st-*" "$TERM"
+    set -e VTE_VERSION
+end
 if [ $hostname = 'jazz' ]
     set -x CDR_DEVICE /dev/cdrom
     set -x GPGKEY E3FEEFF0
