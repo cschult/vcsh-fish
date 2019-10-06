@@ -151,6 +151,9 @@ if status --is-interactive
     abbr -a gss 'git status -s'
     abbr -a gst 'git status'
     abbr -a sv 'sudo -E nvim'
+    abbr -a tt 'tmux'
+    abbr -a ttl 'tmux ls'
+    abbr -a tta 'tmux attach -t'
 
     # abbreviations for distributions
     # ===============================
