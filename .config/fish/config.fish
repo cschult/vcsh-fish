@@ -154,6 +154,7 @@ if status --is-interactive
     abbr -a tt 'tmux'
     abbr -a ttl 'tmux ls'
     abbr -a tta 'tmux attach -t'
+    abbr -a lsmnt 'findmnt -n --real -l -o "SOURCE,TARGET,FSTYPE,USE%"'
 
     # abbreviations for distributions
     # ===============================
