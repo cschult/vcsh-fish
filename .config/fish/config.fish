@@ -21,6 +21,8 @@ set fish_prompt_pwd_dir_length 3
 # ====
 [ -d $HOME/.local/bin ] && set PATH $PATH $HOME/.local/bin
 [ -d $HOME/.node_modules_global ] && set PATH $HOME/.node_modules_global/bin $PATH
+[ -d $HOME/.local/lib/go/bin ] && set PATH $PATH $HOME/.local/lib/go/bin
+[ -d $HOME/src/go/bin ] && set PATH $PATH $HOME/src/go/bin
 if [ $hostname = 'jpop' ]
     set PATH $PATH $HOME/Programme/pycharm-2019.2/bin
 end
@@ -75,8 +77,10 @@ if [ $hostname = 'jazz' ]
     set -x CARGO_HOME $HOME/.local/share/cargo
     set -x XINITRC $HOME/.config/X11/xinitrc
     # set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
+    set -x GOPATH $HOME/.local/lib/go $HOME/src/go
 else if [ $hostname = 'jpop' ]
     set -x RECOLL_CONFDIR $HOME/.config/recoll
+    set -x GOPATH $HOME/.local/lib/go $HOME/src/go
 end
 
 if set -q _distribution
