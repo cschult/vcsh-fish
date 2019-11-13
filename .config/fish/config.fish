@@ -76,6 +76,7 @@ if [ $hostname = 'jazz' ]
     set -x RECOLL_CONFDIR $HOME/.config/recoll
     set -x CARGO_HOME $HOME/.local/share/cargo
     set -x XINITRC $HOME/.config/X11/xinitrc
+    set -x MPD_PORT '6601'
     # set -x GOOGLE_DRIVE_SETTINGS $HOME/.duplicity/credentials
     set -x GOPATH $HOME/.local/lib/go $HOME/src/go
 else if [ $hostname = 'jpop' ]
